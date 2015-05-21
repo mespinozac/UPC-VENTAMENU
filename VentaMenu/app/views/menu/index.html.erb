@@ -1,0 +1,82 @@
+    
+  <div class="container">
+      <div class="page-header">
+          <%= image_tag "logo_header.jpg", :alt => "restaurant +", :title => "restaurant +"%>
+    </div>
+    <div class="navbar navbar-inverse"> 
+        <ul class="nav navbar-nav"> 
+                <li><%= link_to 'Inicio', home_index_path %></li> 
+                <li class="active"><%= link_to 'Menu', menu_index_path %></li> 
+                <li><%= link_to 'Galeria', gallery_index_path %></li> 
+                <li><%= link_to 'Contacto', contact_index_path %></li> 
+        </ul> 
+    </div>
+    <div><!--inicio cuerpo-->
+        <p/>
+        Seleccionar un local
+        <p/>
+        <div class="table-responsive table-hover">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Local</th>
+                    <th>Direccion</th>
+                    <th>Telefono</th>
+                    <th>Correo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"></td>
+                    <td>AAAAAAAAAA</td>    
+                    <td>AAAAAAAAAA</td>    
+                    <td>AAAAAAAAAA</td>    
+                    <td>AAAAAAAAAA</td>    
+                </tr>
+                <tr>
+                    <td><input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"></td>
+                    <td>BBBBBBBBBB</td>    
+                    <td>BBBBBBBBBB</td>    
+                    <td>BBBBBBBBBB</td>    
+                    <td>BBBBBBBBBB</td>    
+                </tr>
+                <tr>
+                    <td><input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"></td>
+                    <td>CCCCCCCCCC</td>    
+                    <td>CCCCCCCCCC</td>    
+                    <td>CCCCCCCCCC</td>    
+                    <td>CCCCCCCCCC</td>    
+                </tr>
+                <tr>
+                    <td><input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"></td>
+                    <td>DDDDDDDDDD</td>    
+                    <td>DDDDDDDDDD</td>    
+                    <td>DDDDDDDDDD</td>    
+                    <td>DDDDDDDDDD</td>    
+                </tr>
+            </tbody>
+        </table>
+        </div>
+        <%= link_to 'Escoger menu', order_index_path %>
+    </div><!--fin cuerpo-->
+    
+  </div>
+
+  
+
+ 
+  
+   <footer>
+     <div class="container">
+      <p>El buen sabor</p>
+      <p>Contact information: <a href="mailto:contact@inkataste.com">
+      mailto:contact@inkataste.com</a>.</p>
+    </div>
+  </footer> 
+
+   
+
+
+
+

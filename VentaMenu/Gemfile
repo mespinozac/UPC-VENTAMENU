@@ -32,11 +32,11 @@ gem 'spring',        group: :development
 
 gem 'owlcarousel-rails'
 
-gem 'therubyracer'
-gem 'less-rails'
-gem 'twitter-bootstrap-rails'
-gem 'simple_form'
-
+gem "twitter-bootstrap-rails"
+gem "less-rails"
+gem "therubyracer"
+gem "simple_form"
+gem "annotate"
 gem "devise"
 
 # Autenthication

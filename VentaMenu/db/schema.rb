@@ -11,9 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20150602014833) do
 
   create_table "carta", force: true do |t|
@@ -38,10 +35,12 @@ ActiveRecord::Schema.define(version: 20150602014833) do
   end
 
   add_index "cartadetalles", ["carta_id"], name: "index_cartadetalles_on_carta_id", using: :btree
-=======
-<<<<<<< HEAD
->>>>>>> 8d25c8fff6b0d763f5244a337536372337793df4
-ActiveRecord::Schema.define(version: 20150602012341) do
+
+  create_table "ciudads", force: true do |t|
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "clientes", force: true do |t|
     t.string   "dni"
@@ -51,26 +50,9 @@ ActiveRecord::Schema.define(version: 20150602012341) do
     t.string   "correo"
     t.string   "empresa"
     t.string   "direccionEnvio"
-<<<<<<< HEAD
-=======
-=======
-ActiveRecord::Schema.define(version: 20150602012507) do
->>>>>>> 60cbf9b6acd070fafb7d1385d24073e4632799b5
-
-  create_table "ciudads", force: true do |t|
-    t.string   "nombre"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "idmenus", force: true do |t|
-    t.string   "name"
-    t.integer  "tipomenus_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "idmenus", ["tipomenus_id"], name: "index_idmenus_on_tipomenus_id", using: :btree
 
   create_table "locals", force: true do |t|
     t.string   "nombre"
@@ -84,13 +66,6 @@ ActiveRecord::Schema.define(version: 20150602012507) do
 
   add_index "locals", ["ciudad_id"], name: "index_locals_on_ciudad_id", using: :btree
 
-  create_table "menus", force: true do |t|
-    t.string   "nombre"
-    t.text     "descripcion"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "tipomenus", force: true do |t|
     t.string   "nombre"
     t.datetime "created_at"
@@ -99,8 +74,6 @@ ActiveRecord::Schema.define(version: 20150602012507) do
 
   create_table "tipoplatos", force: true do |t|
     t.string   "nombre"
->>>>>>> b3867e63d3ac905b512933f79cc485c424410d63
->>>>>>> 8d25c8fff6b0d763f5244a337536372337793df4
     t.datetime "created_at"
     t.datetime "updated_at"
   end

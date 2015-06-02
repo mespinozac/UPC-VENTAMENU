@@ -52,3 +52,44 @@ PARA BORRAR TABLAS VIA MYSQL
 
     mysql> drop table menus;
     Query OK, 0 rows affected (0.04 sec)
+   1  rails s -p $PORT -b $IP
+    2  ls
+    3  cd VentaMenu/
+    4  rails s -p $PORT -b $IP
+    5  rails g simple_form:install less
+    6  rails g bootstrap:install less
+    7  rails g simple_form:install --bootstrap
+    8  rails g bootstrap:themed menus
+    9  rails s -p $PORT -b $IP
+   10  git pull origin master
+   11  git status
+   12  rails g scaffold tipoplato nombre:string
+   13  rake db:migrate
+   14  rails s -p $PORT -b $IP
+   15  rails g bootstrap:themed tipoplatos
+   16  rails s -p $PORT -b $IP
+   17  rails g simple_form:install --bootstrap
+   18  rails s -p $PORT -b $IP
+   19  rails g bootstrap:themed menu
+   20  rails g bootstrap:themed menus
+   21  y
+   22  git commit -am
+   23  git commit -am "111111"
+   24  git push origin master 
+   25  git status
+   26  git push origin master 
+   27  git pull
+   28  git pull origin master
+   29  git add .
+   30  git status
+   31  git commit -am "cambios con menu, tipooplato"
+   32  git push
+   33  git pull
+   34  git pull master origin
+   35  git merge
+   36  git add .
+   37  git pull origin master
+   38  git commit -am "merge"
+   39  git pull origin master
+   40  git push
+   41  history

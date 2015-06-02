@@ -1,18 +1,16 @@
 Rails.application.routes.draw do
 
-<<<<<<< HEAD
+
   resources :menus
 
   resources :cartadetalles
 
   resources :carta
-=======
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
   resources :cartadetalles
 
   resources :carta
 
->>>>>>> 96c7e58ed92936ec4cfa4cc8843ee95aa5646de5
 
   resources :clientes
 
@@ -23,14 +21,12 @@ Rails.application.routes.draw do
   resources :ciudads
 
   resources :tipomenus
-<<<<<<< HEAD
-=======
+
 
 
 
   resources :menus
->>>>>>> 96c7e58ed92936ec4cfa4cc8843ee95aa5646de5
-  
+
   
   root 'home#index'
 

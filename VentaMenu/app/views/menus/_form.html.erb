@@ -3,6 +3,8 @@
   <%= error_span(@menu[:nombre]) %>
   <%= f.input :descripcion %>
   <%= error_span(@menu[:descripcion]) %>
+  <%= f.input :tipoplato_id %>
+  <%= error_span(@menu[:tipoplato_id]) %>
 
   <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

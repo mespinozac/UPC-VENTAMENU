@@ -8,6 +8,8 @@
   <dd><%= @menu.nombre %></dd>
   <dt><strong><%= model_class.human_attribute_name(:descripcion) %>:</strong></dt>
   <dd><%= @menu.descripcion %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:tipoplato_id) %>:</strong></dt>
+  <dd><%= @menu.tipoplato_id %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

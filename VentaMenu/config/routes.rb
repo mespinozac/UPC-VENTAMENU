@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
+  resources :menus
+
+  resources :cartadetalles
+
+  resources :carta
+
   resources :cartadetalles
 
   resources :carta
@@ -18,8 +24,9 @@ Rails.application.routes.draw do
 
 
 
+
   resources :menus
-  
+
   
   root 'home#index'
 

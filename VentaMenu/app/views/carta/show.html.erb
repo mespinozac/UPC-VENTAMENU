@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @cartum.descripcion %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @cartum.fecha %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @cartum.estado %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @cartum.precio %>
+</p>
+
+<p>
+  <strong>Local:</strong>
+  <%= @cartum.local %>
+</p>
+
+<p>
+  <strong>Tipomenu:</strong>
+  <%= @cartum.tipomenu %>
+</p>
+
+<%= link_to 'Edit', edit_cartum_path(@cartum) %> |
+<%= link_to 'Back', carta_path %>

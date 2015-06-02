@@ -1,0 +1,10 @@
+<%= simple_form_for @cartadetalle, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :estado %>
+  <%= error_span(@cartadetalle[:estado]) %>
+  <%= f.input :carta_id %>
+  <%= error_span(@cartadetalle[:carta_id]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                cartadetalles_path, :class => 'btn btn-default' %>
+<% end %>

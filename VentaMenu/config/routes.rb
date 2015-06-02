@@ -1,15 +1,33 @@
 Rails.application.routes.draw do
-  get 'person/index'
 
-  get 'order/index'
 
-  get 'gallery/index'
+  resources :menus
 
-  get 'contact/index'
+  resources :cartadetalles
 
-  get 'menu/index'
+  resources :carta
 
-  get 'home/index'
+  resources :cartadetalles
+
+  resources :carta
+
+
+  resources :clientes
+
+  resources :tipoplatos
+
+  resources :locals
+
+  resources :ciudads
+
+  resources :tipomenus
+
+
+
+
+  resources :menus
+
+  
   root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :idmenus
+
   resources :tipoplatos
 
   resources :locals

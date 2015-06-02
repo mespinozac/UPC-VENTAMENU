@@ -11,13 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150602012054) do
+ActiveRecord::Schema.define(version: 20150602012507) do
 
   create_table "ciudads", force: true do |t|
     t.string   "nombre"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "idmenus", force: true do |t|
+    t.string   "name"
+    t.integer  "tipomenus_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "idmenus", ["tipomenus_id"], name: "index_idmenus_on_tipomenus_id", using: :btree
 
   create_table "locals", force: true do |t|
     t.string   "nombre"

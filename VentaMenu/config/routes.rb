@@ -1,7 +1,18 @@
 Rails.application.routes.draw do
+
   resources :clientes
 
-  get 'home/index'
+  resources :tipoplatos
+
+  resources :locals
+
+  resources :ciudads
+
+  resources :tipomenus
+
+  resources :menus
+  
+  
   root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

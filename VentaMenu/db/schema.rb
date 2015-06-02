@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150602011513) do
+ActiveRecord::Schema.define(version: 20150602012054) do
 
   create_table "ciudads", force: true do |t|
     t.string   "nombre"
@@ -39,6 +39,12 @@ ActiveRecord::Schema.define(version: 20150602011513) do
   end
 
   create_table "tipomenus", force: true do |t|
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tipoplatos", force: true do |t|
     t.string   "nombre"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :idmenus
+  resources :cartadetalles
+
+  resources :carta
 
   resources :tipoplatos
 
@@ -8,8 +10,6 @@ Rails.application.routes.draw do
   resources :ciudads
 
   resources :tipomenus
-
-  resources :menus
 
   get 'person/index'
 

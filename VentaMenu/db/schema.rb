@@ -11,7 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150602012507) do
+ActiveRecord::Schema.define(version: 20150602014833) do
+
+  create_table "carta", force: true do |t|
+    t.text     "descripcion"
+    t.date     "fecha"
+    t.string   "estado"
+    t.float    "precio",      limit: 24
+    t.integer  "local_id"
+    t.integer  "tipomenu_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "carta", ["local_id"], name: "index_carta_on_local_id", using: :btree
+  add_index "carta", ["tipomenu_id"], name: "index_carta_on_tipomenu_id", using: :btree
+
+  create_table "cartadetalles", force: true do |t|
+    t.string   "estado"
+    t.integer  "carta_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "cartadetalles", ["carta_id"], name: "index_cartadetalles_on_carta_id", using: :btree
 
   create_table "ciudads", force: true do |t|
     t.string   "nombre"

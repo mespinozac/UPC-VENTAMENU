@@ -11,6 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150602011513) do
+
+  create_table "ciudads", force: true do |t|
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "locals", force: true do |t|
+    t.string   "nombre"
+    t.string   "direccion"
+    t.string   "telefono"
+    t.string   "celular"
+    t.integer  "ciudad_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "locals", ["ciudad_id"], name: "index_locals_on_ciudad_id", using: :btree
+
+  create_table "menus", force: true do |t|
+    t.string   "nombre"
+    t.text     "descripcion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tipomenus", force: true do |t|
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

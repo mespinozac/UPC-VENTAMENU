@@ -1,13 +1,5 @@
 Rails.application.routes.draw do
-  get 'person/index'
-
-  get 'order/index'
-
-  get 'gallery/index'
-
-  get 'contact/index'
-
-  get 'menu/index'
+  resources :clientes
 
   get 'home/index'
   root 'home#index'

@@ -1,0 +1,35 @@
+<h1>Listing carta</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Descripcion</th>
+      <th>Fecha</th>
+      <th>Estado</th>
+      <th>Precio</th>
+      <th>Local</th>
+      <th>Tipomenu</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @carta.each do |cartum| %>
+      <tr>
+        <td><%= cartum.descripcion %></td>
+        <td><%= cartum.fecha %></td>
+        <td><%= cartum.estado %></td>
+        <td><%= cartum.precio %></td>
+        <td><%= cartum.local %></td>
+        <td><%= cartum.tipomenu %></td>
+        <td><%= link_to 'Show', cartum %></td>
+        <td><%= link_to 'Edit', edit_cartum_path(cartum) %></td>
+        <td><%= link_to 'Destroy', cartum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cartum', new_cartum_path %>

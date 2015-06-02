@@ -1,0 +1,8 @@
+<%= simple_form_for @tipoplato, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :nombre %>
+  <%= error_span(@tipoplato[:nombre]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                tipoplatos_path, :class => 'btn btn-default' %>
+<% end %>

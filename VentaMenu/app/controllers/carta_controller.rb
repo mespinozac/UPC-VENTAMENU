@@ -42,6 +42,6 @@ class CartaController < ApplicationController
     end
 
     def cartum_params
-      params.require(:cartum).permit(:descripcion, :fecha, :estado, :precio, :local_id, :tipomenu_id)
+      params.require(:cartum).permit(:descripcion, :fecha, :estado, :precio)
     end
 end

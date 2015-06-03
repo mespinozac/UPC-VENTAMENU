@@ -11,25 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20150602020318) do
-=======
-ActiveRecord::Schema.define(version: 20150602014833) do
->>>>>>> 96c7e58ed92936ec4cfa4cc8843ee95aa5646de5
+ActiveRecord::Schema.define(version: 20150603224704) do
 
   create_table "carta", force: true do |t|
-    t.text     "descripcion"
+    t.string   "descripcion"
     t.date     "fecha"
     t.string   "estado"
     t.float    "precio",      limit: 24
-    t.integer  "local_id"
-    t.integer  "tipomenu_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "carta", ["local_id"], name: "index_carta_on_local_id", using: :btree
-  add_index "carta", ["tipomenu_id"], name: "index_carta_on_tipomenu_id", using: :btree
 
   create_table "cartadetalles", force: true do |t|
     t.string   "estado"
@@ -54,23 +45,13 @@ ActiveRecord::Schema.define(version: 20150602014833) do
     t.string   "correo"
     t.string   "empresa"
     t.string   "direccionEnvio"
-<<<<<<< HEAD
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "idmenus", force: true do |t|
-    t.string   "name"
-    t.integer  "tipomenus_id"
-=======
->>>>>>> 96c7e58ed92936ec4cfa4cc8843ee95aa5646de5
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "locals", force: true do |t|
     t.string   "nombre"
-    t.string   "direccion"
+    t.text     "direccion"
     t.string   "telefono"
     t.string   "celular"
     t.integer  "ciudad_id"
@@ -80,7 +61,6 @@ ActiveRecord::Schema.define(version: 20150602014833) do
 
   add_index "locals", ["ciudad_id"], name: "index_locals_on_ciudad_id", using: :btree
 
-<<<<<<< HEAD
   create_table "menus", force: true do |t|
     t.string   "nombre"
     t.text     "descripcion"
@@ -91,8 +71,6 @@ ActiveRecord::Schema.define(version: 20150602014833) do
 
   add_index "menus", ["tipoplato_id"], name: "index_menus_on_tipoplato_id", using: :btree
 
-=======
->>>>>>> 96c7e58ed92936ec4cfa4cc8843ee95aa5646de5
   create_table "tipomenus", force: true do |t|
     t.string   "nombre"
     t.datetime "created_at"

@@ -1,27 +1,29 @@
-<%- model_class = Local -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
-</div>
+<p id="notice"><%= notice %></p>
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:nombre) %>:</strong></dt>
-  <dd><%= @local.nombre %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:direccion) %>:</strong></dt>
-  <dd><%= @local.direccion %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:telefono) %>:</strong></dt>
-  <dd><%= @local.telefono %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:celular) %>:</strong></dt>
-  <dd><%= @local.celular %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:ciudad_id) %>:</strong></dt>
-  <dd><%= @local.ciudad_id %></dd>
-</dl>
+<p>
+  <strong>Nombre:</strong>
+  <%= @local.nombre %>
+</p>
 
-<%= link_to t('.back', :default => t("helpers.links.back")),
-              locals_path, :class => 'btn btn-default'  %>
-<%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_local_path(@local), :class => 'btn btn-default' %>
-<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              local_path(@local),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+<p>
+  <strong>Direccion:</strong>
+  <%= @local.direccion %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @local.telefono %>
+</p>
+
+<p>
+  <strong>Celular:</strong>
+  <%= @local.celular %>
+</p>
+
+<p>
+  <strong>Ciudad:</strong>
+  <%= @local.ciudad %>
+</p>
+
+<%= link_to 'Edit', edit_local_path(@local) %> |
+<%= link_to 'Back', locals_path %>

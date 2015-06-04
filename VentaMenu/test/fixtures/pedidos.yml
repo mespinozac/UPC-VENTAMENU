@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fecha: 2015-06-04
+  horapedido: MyString
+  horaentrega: MyString
+  estado: MyString
+  montopedido: 1.5
+  cartacab_id: 
+
+two:
+  fecha: 2015-06-04
+  horapedido: MyString
+  horaentrega: MyString
+  estado: MyString
+  montopedido: 1.5
+  cartacab_id: 

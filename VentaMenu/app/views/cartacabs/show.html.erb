@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @cartacab.descripcion %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @cartacab.fecha %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @cartacab.estado %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @cartacab.precio %>
+</p>
+
+<%= link_to 'Edit', edit_cartacab_path(@cartacab) %> |
+<%= link_to 'Back', cartacabs_path %>

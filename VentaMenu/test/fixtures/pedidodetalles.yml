@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  estado: MyString
+  pedido_id: 
+  menu_id: 
+
+two:
+  estado: MyString
+  pedido_id: 
+  menu_id: 

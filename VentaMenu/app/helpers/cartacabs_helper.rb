@@ -1,0 +1,2 @@
+module CartacabsHelper
+end

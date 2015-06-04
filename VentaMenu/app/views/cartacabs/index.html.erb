@@ -1,0 +1,31 @@
+<h1>Listing cartacabs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Descripcion</th>
+      <th>Fecha</th>
+      <th>Estado</th>
+      <th>Precio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cartacabs.each do |cartacab| %>
+      <tr>
+        <td><%= cartacab.descripcion %></td>
+        <td><%= cartacab.fecha %></td>
+        <td><%= cartacab.estado %></td>
+        <td><%= cartacab.precio %></td>
+        <td><%= link_to 'Show', cartacab %></td>
+        <td><%= link_to 'Edit', edit_cartacab_path(cartacab) %></td>
+        <td><%= link_to 'Destroy', cartacab, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cartacab', new_cartacab_path %>

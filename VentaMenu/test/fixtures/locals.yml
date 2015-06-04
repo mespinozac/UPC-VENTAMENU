@@ -2,14 +2,14 @@
 
 one:
   nombre: MyString
-  direccion: MyString
+  direccion: MyText
   telefono: MyString
   celular: MyString
   ciudad_id: 
 
 two:
   nombre: MyString
-  direccion: MyString
+  direccion: MyText
   telefono: MyString
   celular: MyString
   ciudad_id: 

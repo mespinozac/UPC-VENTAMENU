@@ -1,38 +1,27 @@
-<%- model_class = Cartadetalle -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
-</div>
-<table class="table table-striped">
+<h1>Listing cartadetalles</h1>
+
+<table>
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:estado) %></th>
-      <th><%= model_class.human_attribute_name(:carta_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th>Estado</th>
+      <th>Carta</th>
+      <th colspan="3"></th>
     </tr>
   </thead>
+
   <tbody>
     <% @cartadetalles.each do |cartadetalle| %>
       <tr>
-        <td><%= link_to cartadetalle.id, cartadetalle_path(cartadetalle) %></td>
         <td><%= cartadetalle.estado %></td>
-        <td><%= cartadetalle.carta_id %></td>
-        <td><%=l cartadetalle.created_at %></td>
-        <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_cartadetalle_path(cartadetalle), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      cartadetalle_path(cartadetalle),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger' %>
-        </td>
+        <td><%= cartadetalle.carta %></td>
+        <td><%= link_to 'Show', cartadetalle %></td>
+        <td><%= link_to 'Edit', edit_cartadetalle_path(cartadetalle) %></td>
+        <td><%= link_to 'Destroy', cartadetalle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_cartadetalle_path,
-            :class => 'btn btn-primary' %>
+<br>
+
+<%= link_to 'New Cartadetalle', new_cartadetalle_path %>

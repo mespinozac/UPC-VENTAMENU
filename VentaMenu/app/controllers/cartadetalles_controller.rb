@@ -42,6 +42,6 @@ class CartadetallesController < ApplicationController
     end
 
     def cartadetalle_params
-      params.require(:cartadetalle).permit(:estado, :carta_id)
+      params.require(:cartadetalle).permit(:estado, :cartacab_id, :menu_id)
     end
 end

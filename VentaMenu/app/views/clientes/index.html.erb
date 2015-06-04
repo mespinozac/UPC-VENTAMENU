@@ -3,7 +3,6 @@
 <table>
   <thead>
     <tr>
-      <th>Dni</th>
       <th>Nombre</th>
       <th>Apellidos</th>
       <th>Celular</th>
@@ -17,13 +16,12 @@
   <tbody>
     <% @clientes.each do |cliente| %>
       <tr>
-        <td><%= cliente.dni %></td>
         <td><%= cliente.nombre %></td>
         <td><%= cliente.apellidos %></td>
         <td><%= cliente.celular %></td>
         <td><%= cliente.correo %></td>
         <td><%= cliente.empresa %></td>
-        <td><%= cliente.direccionEnvio %></td>
+        <td><%= cliente.direccionenvio %></td>
         <td><%= link_to 'Show', cliente %></td>
         <td><%= link_to 'Edit', edit_cliente_path(cliente) %></td>
         <td><%= link_to 'Destroy', cliente, method: :delete, data: { confirm: 'Are you sure?' } %></td>

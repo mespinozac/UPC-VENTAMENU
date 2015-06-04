@@ -11,25 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150603224704) do
+ActiveRecord::Schema.define(version: 20150604173706) do
 
-  create_table "carta", force: true do |t|
-    t.string   "descripcion"
+  create_table "cartacabs", force: true do |t|
+    t.text     "descripcion"
     t.date     "fecha"
     t.string   "estado"
     t.float    "precio",      limit: 24
+    t.integer  "local_id"
+    t.integer  "tipomenu_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "cartacabs", ["local_id"], name: "index_cartacabs_on_local_id", using: :btree
+  add_index "cartacabs", ["tipomenu_id"], name: "index_cartacabs_on_tipomenu_id", using: :btree
 
   create_table "cartadetalles", force: true do |t|
     t.string   "estado"
-    t.integer  "carta_id"
+    t.integer  "cartacab_id"
+    t.integer  "menu_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "cartadetalles", ["carta_id"], name: "index_cartadetalles_on_carta_id", using: :btree
+  add_index "cartadetalles", ["cartacab_id"], name: "index_cartadetalles_on_cartacab_id", using: :btree
+  add_index "cartadetalles", ["menu_id"], name: "index_cartadetalles_on_menu_id", using: :btree
 
   create_table "ciudads", force: true do |t|
     t.string   "nombre"
@@ -38,13 +45,12 @@ ActiveRecord::Schema.define(version: 20150603224704) do
   end
 
   create_table "clientes", force: true do |t|
-    t.string   "dni"
     t.string   "nombre"
     t.string   "apellidos"
     t.string   "celular"
     t.string   "correo"
     t.string   "empresa"
-    t.string   "direccionEnvio"
+    t.string   "direccionenvio"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -70,6 +76,30 @@ ActiveRecord::Schema.define(version: 20150603224704) do
   end
 
   add_index "menus", ["tipoplato_id"], name: "index_menus_on_tipoplato_id", using: :btree
+
+  create_table "pedidodetalles", force: true do |t|
+    t.string   "estado"
+    t.integer  "pedido_id"
+    t.integer  "menu_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "pedidodetalles", ["menu_id"], name: "index_pedidodetalles_on_menu_id", using: :btree
+  add_index "pedidodetalles", ["pedido_id"], name: "index_pedidodetalles_on_pedido_id", using: :btree
+
+  create_table "pedidos", force: true do |t|
+    t.date     "fecha"
+    t.string   "horapedido"
+    t.string   "horaentrega"
+    t.string   "estado"
+    t.float    "montopedido", limit: 24
+    t.integer  "cartacab_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "pedidos", ["cartacab_id"], name: "index_pedidos_on_cartacab_id", using: :btree
 
   create_table "tipomenus", force: true do |t|
     t.string   "nombre"

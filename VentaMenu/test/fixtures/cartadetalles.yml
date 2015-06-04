@@ -2,8 +2,10 @@
 
 one:
   estado: MyString
-  carta_id: 
+  cartacab_id: 
+  menu_id: 
 
 two:
   estado: MyString
-  carta_id: 
+  cartacab_id: 
+  menu_id: 

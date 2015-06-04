@@ -1,45 +1,16 @@
-<%= form_for(@cliente) do |f| %>
-  <% if @cliente.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@cliente.errors.count, "error") %> prohibited this cliente from being saved:</h2>
+<%= simple_form_for(@cliente) do |f| %>
+  <%= f.error_notification %>
 
-      <ul>
-      <% @cliente.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <div class="form-inputs">
+    <%= f.input :nombre %>
+    <%= f.input :apellidos %>
+    <%= f.input :celular %>
+    <%= f.input :correo %>
+    <%= f.input :empresa %>
+    <%= f.input :direccionenvio %>
+  </div>
 
-  <div class="field">
-    <%= f.label :dni %><br>
-    <%= f.text_field :dni %>
-  </div>
-  <div class="field">
-    <%= f.label :nombre %><br>
-    <%= f.text_field :nombre %>
-  </div>
-  <div class="field">
-    <%= f.label :apellidos %><br>
-    <%= f.text_field :apellidos %>
-  </div>
-  <div class="field">
-    <%= f.label :celular %><br>
-    <%= f.text_field :celular %>
-  </div>
-  <div class="field">
-    <%= f.label :correo %><br>
-    <%= f.text_field :correo %>
-  </div>
-  <div class="field">
-    <%= f.label :empresa %><br>
-    <%= f.text_field :empresa %>
-  </div>
-  <div class="field">
-    <%= f.label :direccionEnvio %><br>
-    <%= f.text_field :direccionEnvio %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.button :submit %>
   </div>
 <% end %>

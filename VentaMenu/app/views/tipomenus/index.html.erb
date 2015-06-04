@@ -1,36 +1,25 @@
-<%- model_class = Tipomenu -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
-</div>
-<table class="table table-striped">
+<h1>Listing tipomenus</h1>
+
+<table>
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:nombre) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th>Nombre</th>
+      <th colspan="3"></th>
     </tr>
   </thead>
+
   <tbody>
     <% @tipomenus.each do |tipomenu| %>
       <tr>
-        <td><%= link_to tipomenu.id, tipomenu_path(tipomenu) %></td>
         <td><%= tipomenu.nombre %></td>
-        <td><%=l tipomenu.created_at %></td>
-        <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_tipomenu_path(tipomenu), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      tipomenu_path(tipomenu),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger' %>
-        </td>
+        <td><%= link_to 'Show', tipomenu %></td>
+        <td><%= link_to 'Edit', edit_tipomenu_path(tipomenu) %></td>
+        <td><%= link_to 'Destroy', tipomenu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_tipomenu_path,
-            :class => 'btn btn-primary' %>
+<br>
+
+<%= link_to 'New Tipomenu', new_tipomenu_path %>

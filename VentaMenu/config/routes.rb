@@ -1,7 +1,17 @@
 Rails.application.routes.draw do
 
 
+  resources :pedidodetalles
+
+  resources :pedidos
+
+  resources :clientes
+
   resources :cartadetalles
+
+  resources :tipomenus
+
+  resources :cartacabs
 
   resources :locals
 
@@ -10,14 +20,8 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :menus
 
-  resources :carta
-
-
-  resources :clientes
 
   resources :tipoplatos
-
-  resources :tipomenus
 
 
 

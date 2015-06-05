@@ -1,3 +1,3 @@
 class Ciudad < ActiveRecord::Base
-    has_many :local
+    has_many :local # !
 end

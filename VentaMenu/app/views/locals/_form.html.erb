@@ -1,15 +1,16 @@
-<%= simple_form_for(@local) do |f| %>
-  <%= f.error_notification %>
+<%= simple_form_for @local, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :nombre %>
+  <%= error_span(@local[:nombre]) %>
+  <%= f.input :direccion %>
+  <%= error_span(@local[:direccion]) %>
+  <%= f.input :telefono %>
+  <%= error_span(@local[:telefono]) %>
+  <%= f.input :celular %>
+  <%= error_span(@local[:celular]) %>
+  <%= f.input :ciudad_id %>
+  <%= error_span(@local[:ciudad_id]) %>
 
-  <div class="form-inputs">
-    <%= f.input :nombre %>
-    <%= f.input :direccion %>
-    <%= f.input :telefono %>
-    <%= f.input :celular %>
-    <%= f.association :ciudad %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                locals_path, :class => 'btn btn-default' %>
 <% end %>

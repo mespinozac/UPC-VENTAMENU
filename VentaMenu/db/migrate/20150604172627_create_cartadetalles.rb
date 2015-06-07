@@ -4,7 +4,7 @@ class CreateCartadetalles < ActiveRecord::Migration
       t.string :estado
       t.references :cartacab, index: true
       t.references :menu, index: true
-
+      t.references :tipomenu, index: true
       t.timestamps
     end
   end

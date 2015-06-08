@@ -6,7 +6,7 @@ class CreateCartacabs < ActiveRecord::Migration
       t.string :estado
       t.float :precio
       t.references :local, index: true
-      t.references :tipomenu, index: true
+      
       t.timestamps
     end
   end

@@ -11,6 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20150604222036) do
+=======
 ActiveRecord::Schema.define(version: 20150607201538) do
 
   create_table "admins", force: true do |t|
@@ -30,6 +33,7 @@ ActiveRecord::Schema.define(version: 20150607201538) do
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
+>>>>>>> 34cacc56a24cbb695f03edc82bd52ea023841e19
 
   create_table "cartacabs", force: true do |t|
     t.text     "descripcion"
@@ -37,24 +41,38 @@ ActiveRecord::Schema.define(version: 20150607201538) do
     t.string   "estado"
     t.float    "precio",      limit: 24
     t.integer  "local_id"
+<<<<<<< HEAD
+    t.integer  "tipomenu_id"
+=======
+>>>>>>> 34cacc56a24cbb695f03edc82bd52ea023841e19
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "cartacabs", ["local_id"], name: "index_cartacabs_on_local_id", using: :btree
+<<<<<<< HEAD
+  add_index "cartacabs", ["tipomenu_id"], name: "index_cartacabs_on_tipomenu_id", using: :btree
+=======
+>>>>>>> 34cacc56a24cbb695f03edc82bd52ea023841e19
 
   create_table "cartadetalles", force: true do |t|
     t.string   "estado"
     t.integer  "cartacab_id"
     t.integer  "menu_id"
+<<<<<<< HEAD
+=======
     t.integer  "tipomenu_id"
+>>>>>>> 34cacc56a24cbb695f03edc82bd52ea023841e19
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "cartadetalles", ["cartacab_id"], name: "index_cartadetalles_on_cartacab_id", using: :btree
   add_index "cartadetalles", ["menu_id"], name: "index_cartadetalles_on_menu_id", using: :btree
+<<<<<<< HEAD
+=======
   add_index "cartadetalles", ["tipomenu_id"], name: "index_cartadetalles_on_tipomenu_id", using: :btree
+>>>>>>> 34cacc56a24cbb695f03edc82bd52ea023841e19
 
   create_table "ciudads", force: true do |t|
     t.string   "nombre"

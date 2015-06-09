@@ -4,8 +4,10 @@ class CartadetallesController < ApplicationController
   respond_to :html
 
   def index
-    @cartadetalles = Cartadetalle.all
-    respond_with(@cartadetalles)
+    @tipomenus = Tipomenu.all
+    @cartadetalles = Cartadetalle.joins(:tipomenu).order("tipomenus.nombre")
+    
+    respond_with(@cartadetalles, @tipomenus)
   end
 
   def show

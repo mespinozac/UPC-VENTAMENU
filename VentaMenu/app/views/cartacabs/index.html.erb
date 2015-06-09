@@ -25,7 +25,6 @@
         <td><%= cartacab.estado %></td>
         <td><%= cartacab.precio %></td>
         <td><%= cartacab.local_id %></td>
-        <td><%= cartacab.tipomenu_id %></td>
         <td><%=l cartacab.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
@@ -37,6 +36,7 @@
                       :class => 'btn btn-xs btn-danger' %>
         </td>
       </tr>
+      
     <% end %>
   </tbody>
 </table>

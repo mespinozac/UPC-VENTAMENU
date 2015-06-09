@@ -6,24 +6,24 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:nombre) %></th>
-      <th><%= model_class.human_attribute_name(:descripcion) %></th>
-      <th><%= model_class.human_attribute_name(:tipoplato_id) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:dateMenu) %></th>
+      <th><%= model_class.human_attribute_name(:status) %></th>
+      <th><%= model_class.human_attribute_name(:price) %></th>
+      <th><%= model_class.human_attribute_name(:local_id) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @menus.each do |menu| %>
-       <div><%= menu.name %>
-      <% @products.each do |cartacab| %>
-        <tr>
       <tr>
         <td><%= link_to menu.id, menu_path(menu) %></td>
-        <td><%= menu.nombre %></td>
-        <td><%= menu.descripcion %></td>
-        <td><%= menu.tipoplato_id %></td>
-        <td><%= cartacab.menu.name %></td>
+        <td><%= menu.description %></td>
+        <td><%= menu.dateMenu %></td>
+        <td><%= menu.status %></td>
+        <td><%= menu.price %></td>
+        <td><%= menu.local_id %></td>
         <td><%=l menu.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
@@ -34,7 +34,7 @@
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-xs btn-danger' %>
         </td>
-       </tr>
+      </tr>
     <% end %>
   </tbody>
 </table>

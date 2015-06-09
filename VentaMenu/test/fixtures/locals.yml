@@ -1,29 +1,17 @@
-# == Schema Information
-#
-# Table name: locals
-#
-#  id         :integer          not null, primary key
-#  nombre     :string(255)
-#  direccion  :text
-#  telefono   :string(255)
-#  celular    :string(255)
-#  ciudad_id  :integer
-#  created_at :datetime
-#  updated_at :datetime
-#
-
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  nombre: MyString
-  direccion: MyText
-  telefono: MyString
-  celular: MyString
-  ciudad_id: 
+  name: MyString
+  address: MyString
+  telephone: MyString
+  celphone: MyString
+  mail: MyString
+  city_id: 
 
 two:
-  nombre: MyString
-  direccion: MyText
-  telefono: MyString
-  celular: MyString
-  ciudad_id: 
+  name: MyString
+  address: MyString
+  telephone: MyString
+  celphone: MyString
+  mail: MyString
+  city_id: 

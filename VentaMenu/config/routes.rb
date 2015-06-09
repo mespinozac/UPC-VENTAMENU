@@ -1,34 +1,28 @@
 Rails.application.routes.draw do
 
 
-  devise_for :admins
-  devise_for :users
-  resources :pedidodetalles
+  get 'select_menu/index'
 
-  resources :pedidos
+  resources :menu_details
 
-  resources :clientes
+  resources :menus
 
-  resources :cartadetalles
+  resources :foods
 
-  resources :tipomenus
+  resources :type_foods
 
-  resources :cartacabs
+  resources :type_menus
 
   resources :locals
 
-  resources :ciudads
+  resources :cities
 
+  devise_for :admins
+  devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  resources :menus
-
-
-  resources :tipoplatos
 
 
 
-
-  resources :menus
 
   
   root 'home#index'

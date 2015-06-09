@@ -1,1 +1,1 @@
-json.extract! @local, :id, :nombre, :direccion, :telefono, :celular, :ciudad_id, :created_at, :updated_at
+json.extract! @local, :id, :name, :address, :telephone, :celphone, :mail, :city_id, :created_at, :updated_at

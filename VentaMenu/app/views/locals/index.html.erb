@@ -24,7 +24,7 @@
         <td><%= local.direccion %></td>
         <td><%= local.telefono %></td>
         <td><%= local.celular %></td>
-        <td><%= local.ciudad_id %></td>
+        <td><%= local.ciudad.nombre %></td>
         <td><%=l local.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

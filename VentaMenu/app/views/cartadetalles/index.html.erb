@@ -2,6 +2,11 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
+<script>
+  var tipoMenu="";
+</script>
+<% @tipomenus.each do |tipo| %>
+<div><h1><%= tipo.nombre %></h1></div>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -15,12 +20,17 @@
     </tr>
   </thead>
   <tbody>
-    <% @cartadetalles.each do |cartadetalle| %>
+    <% tipo.cartadetalle.each do |cartadetalle| %>
+    
+    <script>
+      alert('richard')
+    </script>
       <tr>
         <td><%= link_to cartadetalle.id, cartadetalle_path(cartadetalle) %></td>
         <td><%= cartadetalle.estado %></td>
         <td><%= cartadetalle.cartacab_id %></td>
-        <td><%= cartadetalle.menu_id %></td>
+        <td><%= cartadetalle.menu.nombre %></td>
+        <td><%= cartadetalle.tipomenu.nombre %></td>
         <td><%=l cartadetalle.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
@@ -35,6 +45,7 @@
     <% end %>
   </tbody>
 </table>
+<% end %>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_cartadetalle_path,

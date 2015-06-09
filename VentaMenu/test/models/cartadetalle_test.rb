@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: cartadetalles
+#
+#  id          :integer          not null, primary key
+#  estado      :string(255)
+#  cartacab_id :integer
+#  menu_id     :integer
+#  tipomenu_id :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
 require 'test_helper'
 
 class CartadetalleTest < ActiveSupport::TestCase

@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: pedidodetalles
+#
+#  id         :integer          not null, primary key
+#  estado     :string(255)
+#  pedido_id  :integer
+#  menu_id    :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:

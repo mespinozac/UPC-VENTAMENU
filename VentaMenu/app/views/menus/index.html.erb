@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:dateMenu) %></th>
       <th><%= model_class.human_attribute_name(:status) %></th>
       <th><%= model_class.human_attribute_name(:price) %></th>
@@ -19,7 +19,7 @@
     <% @menus.each do |menu| %>
       <tr>
         <td><%= link_to menu.id, menu_path(menu) %></td>
-        <td><%= menu.description %></td>
+        <td><%= menu.name %></td>
         <td><%= menu.dateMenu %></td>
         <td><%= menu.status %></td>
         <td><%= menu.price %></td>

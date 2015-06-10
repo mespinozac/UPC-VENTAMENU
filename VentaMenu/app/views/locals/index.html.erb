@@ -20,20 +20,12 @@
     <% @locals.each do |local| %>
       <tr>
         <td><%= link_to local.id, local_path(local) %></td>
-<<<<<<< HEAD
         <td><%= local.name %></td>
         <td><%= local.address %></td>
         <td><%= local.telephone %></td>
         <td><%= local.celphone %></td>
         <td><%= local.mail %></td>
         <td><%= local.city_id %></td>
-=======
-        <td><%= local.nombre %></td>
-        <td><%= local.direccion %></td>
-        <td><%= local.telefono %></td>
-        <td><%= local.celular %></td>
-        <td><%= local.ciudad.nombre %></td>
->>>>>>> 82d99c869a33714ae0fa7cfedd762857657844cd
         <td><%=l local.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

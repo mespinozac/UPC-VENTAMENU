@@ -1,3 +1,3 @@
 class TypeMenu < ActiveRecord::Base
-    has_many :typeFoods
+    has_many :menuDetails
 end

@@ -1,13 +1,13 @@
 <%= simple_form_for @menu, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :description %>
-  <%= error_span(@menu[:description]) %>
+  <%= f.input :name %>
+  <%= error_span(@menu[:name]) %>
   <%= f.input :dateMenu %>
   <%= error_span(@menu[:dateMenu]) %>
   <%= f.input :status %>
   <%= error_span(@menu[:status]) %>
   <%= f.input :price %>
   <%= error_span(@menu[:price]) %>
-  <%= f.input :local_id %>
+  <%= f.association :local %>
   <%= error_span(@menu[:local_id]) %>
 
   <%= f.button :submit, :class => 'btn-primary' %>

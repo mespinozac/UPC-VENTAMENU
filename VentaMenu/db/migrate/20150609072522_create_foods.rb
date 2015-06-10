@@ -3,7 +3,7 @@ class CreateFoods < ActiveRecord::Migration
     create_table :foods do |t|
       t.string :name
       t.string :description
-
+      t.references :typeFood
       t.timestamps
     end
   end

@@ -9,7 +9,7 @@
   <%= error_span(@local[:celphone]) %>
   <%= f.input :mail %>
   <%= error_span(@local[:mail]) %>
-  <%= f.input :city_id %>
+  <%= f.association :city %>
   <%= error_span(@local[:city_id]) %>
 
   <%= f.button :submit, :class => 'btn-primary' %>

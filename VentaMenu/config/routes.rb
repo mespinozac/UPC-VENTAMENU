@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'nosotros/index'
+  
   
   resources :orders
 
@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get 'cus_local/index'
   get 'cus_local/localmenu'
   get 'cus_local/menuseleccionado'
+  get 'nosotros/index'
+  
   resources :menu_details
 
   resources :menus

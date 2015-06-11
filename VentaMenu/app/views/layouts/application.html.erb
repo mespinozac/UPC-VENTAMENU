@@ -48,7 +48,7 @@
         <a class="navbar-brand" href=<%= root_path%>><%= image_tag "logo.png", :alt => "FastMenu"%></a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Nosotros", controller: "nosotros", action: "index"  %></li>
+            <li><%= link_to "Nosotros", nosotros_index_path  %></li>
             <li><%= link_to "Carta cliente",cus_local_index_path %></li>
             <li><%= link_to "Ciudades", cities_path %></li>
             <li><%= link_to "Locales", locals_path%></li>
@@ -91,7 +91,7 @@
     <p><%= link_to 'Actualizar datos',edit_user_registration_path %></p>  
 <% end %> 
 
-          </div><!--/.well -->
+              </div><!--/.well -->
         </div><!--/span-->
       </div><!--/row-->
 
@@ -103,3 +103,4 @@
 
   </body>
 </html>
+  

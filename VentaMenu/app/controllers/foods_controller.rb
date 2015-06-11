@@ -42,10 +42,6 @@ class FoodsController < ApplicationController
     end
 
     def food_params
-<<<<<<< HEAD
-      params.require(:food).permit(:name, :description, :picture)
-=======
-      params.require(:food).permit(:name, :description, :type_food_id)
->>>>>>> 9d0e990c4358101e6ced01e677d3c1268cca1144
+      params.require(:food).permit(:name, :description, :type_food_id, :picture)
     end
 end

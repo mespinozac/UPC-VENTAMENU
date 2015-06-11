@@ -1,3 +1,3 @@
 class Food < ActiveRecord::Base
-    belongs_to :typeFood
+    belongs_to :type_food
 end

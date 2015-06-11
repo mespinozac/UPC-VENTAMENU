@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20150609073651) do
   create_table "foods", force: true do |t|
     t.string   "name"
     t.string   "description"
-    t.integer  "typeFood_id"
+    t.integer  "type_food_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

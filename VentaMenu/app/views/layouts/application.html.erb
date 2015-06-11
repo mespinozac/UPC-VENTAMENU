@@ -68,17 +68,19 @@
           <div class="well sidebar-nav">
             <h3>INTRANET</h3>
            <% if user_signed_in? %>
-    <p> Sesion iniciada</p>
-    <p><%= link_to 'Ingresar Admin_Rails',rails_admin_path %></p>
-    <p><%= link_to 'Finalizar sesion', destroy_user_session_path, method: :delete %> </p> 
-<% else %>
-    <p>
-        <%= link_to 'Iniciar sesion' ,new_user_session_path %> 
-        <%= 'o' %>
-        <%= link_to 'Registrarse',new_user_registration_path %>
-    </p>
+              <p> Sesion iniciada</p>
+              <% if current_user.admin? %>
+                <p><%= link_to 'Ingresar Admin_Rails',rails_admin_path %></p>
+              <% end %>
+              <p><%= link_to 'Finalizar sesion', destroy_user_session_path, method: :delete %> </p> 
+          <% else %>
+              <p>
+                  <%= link_to 'Iniciar sesion' ,new_user_session_path %> 
+                  <%= 'o' %>
+                  <%= link_to 'Registrarse',new_user_registration_path %>
+              </p>
     
-<% end %>
+          <% end %>
 <% if current_user %>
     <p> Usuario activo: <%= current_user.email %> </p>
     <p><%= link_to 'Actualizar datos',edit_user_registration_path %></p>  

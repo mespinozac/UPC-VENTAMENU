@@ -2,10 +2,8 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
  </div>
- <% @menus.each do |menu| %>
-        <h2><%= menu.name%></h2>
-        <div class="container">
-          <table class="table table-striped">
+<div class="container">
+  <table class="table table-striped">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
@@ -36,7 +34,6 @@
    </tbody>
 </table>
 </div>
- <% end %>
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_type_food_path,
             :class => 'btn btn-primary' %>

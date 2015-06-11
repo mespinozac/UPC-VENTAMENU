@@ -48,7 +48,7 @@
         <a class="navbar-brand" href=<%= root_path%>><%= image_tag "logo.png", :alt => "FastMenu"%></a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Nosotros", "/path3"  %></li>
+            <li><%= link_to "Nosotros", controller: "nosotros", action: "index"  %></li>
             <li><%= link_to "Ciudades", cities_path %></li>
             <li><%= link_to "Locales", locals_path%></li>
             <li><%= link_to "Carta", menus_path  %></li>

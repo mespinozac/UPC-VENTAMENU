@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'nosotros/index'
+
   get 'select_menu/index'
 
   resources :menu_details

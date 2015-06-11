@@ -3,7 +3,13 @@ class MenusController < ApplicationController
   respond_to :html
 
   def index
+  @idlocal = params[:q]
+  if @q
+    @menus = Menu.where(:id => @idlocal)
+  else
     @menus = Menu.all
+   end
+    
     respond_with(@menus)
   end
 

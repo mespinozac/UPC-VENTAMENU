@@ -27,6 +27,7 @@
                             <th>Menu</th>
                             <th>Estado Menu</th>
                             <th></th>
+                            <th></th>
                           </tr>
                         </thead>
                         <tbody>
@@ -36,6 +37,7 @@
                               <td><%= menu_detail.food.name %></td>
                               <td><%= menu_detail.status %></td>
                               <td><input type="checkbox" onclick="seleccionarCheck();" value="<%= menu_detail.id%>" name="menu<%= menu_detail.id%>"></td>
+                              <td><%= image_tag menu_detail.food.picture.url(:thumb) %></td>    
                             </tr>
                           <% end %>
                         </tbody>

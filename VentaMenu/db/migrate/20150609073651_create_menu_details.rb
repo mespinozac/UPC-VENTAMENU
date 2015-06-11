@@ -4,7 +4,7 @@ class CreateMenuDetails < ActiveRecord::Migration
       t.string :status
       t.references :menu, index: true
       t.references :food, index: true
-      t.references :typeMenu, index: true
+      t.references :type_menu, index: true
 
       t.timestamps
     end

@@ -63,14 +63,14 @@ ActiveRecord::Schema.define(version: 20150609073651) do
     t.string   "status"
     t.integer  "menu_id"
     t.integer  "food_id"
-    t.integer  "typeMenu_id"
+    t.integer  "type_menu_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "menu_details", ["food_id"], name: "index_menu_details_on_food_id", using: :btree
   add_index "menu_details", ["menu_id"], name: "index_menu_details_on_menu_id", using: :btree
-  add_index "menu_details", ["typeMenu_id"], name: "index_menu_details_on_typeMenu_id", using: :btree
+  add_index "menu_details", ["type_menu_id"], name: "index_menu_details_on_type_menu_id", using: :btree
 
   create_table "menus", force: true do |t|
     t.string   "name"

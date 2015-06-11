@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150609073651) do
+ActiveRecord::Schema.define(version: 20150611210614) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -38,12 +38,35 @@ ActiveRecord::Schema.define(version: 20150609073651) do
     t.datetime "updated_at"
   end
 
+  create_table "contacts", force: true do |t|
+    t.string   "name"
+    t.string   "celphone"
+    t.string   "mail"
+    t.text     "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "customers", force: true do |t|
+    t.string   "name"
+    t.string   "lastname"
+    t.string   "celphone"
+    t.string   "mail"
+    t.string   "address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "foods", force: true do |t|
     t.string   "name"
     t.string   "description"
     t.integer  "type_food_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
   create_table "locals", force: true do |t|
@@ -83,6 +106,19 @@ ActiveRecord::Schema.define(version: 20150609073651) do
   end
 
   add_index "menus", ["local_id"], name: "index_menus_on_local_id", using: :btree
+
+  create_table "orders", force: true do |t|
+    t.date     "dateOrder"
+    t.string   "status"
+    t.float    "price",       limit: 24
+    t.integer  "customer_id"
+    t.integer  "menu_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "orders", ["customer_id"], name: "index_orders_on_customer_id", using: :btree
+  add_index "orders", ["menu_id"], name: "index_orders_on_menu_id", using: :btree
 
   create_table "type_foods", force: true do |t|
     t.string   "name"

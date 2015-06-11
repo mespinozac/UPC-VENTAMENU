@@ -1,0 +1,89 @@
+<%- model_class = Menu -%>
+
+
+  
+    <% @menus.each do |menu| %>
+    <div><h4>Local <%= menu.local.name %></h4></div>
+    <div><h4>fecha <%= menu.dateMenu %></h4></div>
+    <div><h4>carta <%= menu.name %></h4></div>
+    
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @type_menus.each do |type_menu| %>
+                  <tr>
+                    <td><h5><input type="radio" name="type_menu" onclick="habilitarCheck(this,'typeMenu<%= type_menu.id %>')">Tipo  de menu <%= type_menu.name %></label></h3></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <table class="table table-striped" id="typeMenu<%= type_menu.id %>">
+                        <thead>
+                          <tr>
+                            <th>Tipo Plato</th>
+                            <th>Menu</th>
+                            <th>Estado Menu</th>
+                            <th></th>
+                            <th></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <% type_menu.menu_details.each do |menu_detail| %>
+                            <tr>
+                              <td><%= menu_detail.food.type_food.name %></td>
+                              <td><%= menu_detail.food.name %></td>
+                              <td><%= menu_detail.status %></td>
+                              <td><input type="checkbox" onclick="seleccionarCheck();" value="<%= menu_detail.id%>" name="menu<%= menu_detail.id%>"></td>
+                              <td><%= image_tag menu_detail.food.picture.url(:thumb) %></td>    
+                            </tr>
+                          <% end %>
+                        </tbody>
+                      </table>
+                <% end %>
+                </table>
+    <% end %>
+    <script>
+        
+      
+    </script>
+  
+    <a href="menuseleccionado?menusId" id="idMenus" class="btn btn-primary">seleccionar menu</a>
+    
+<script>
+    $("input:checkbox").each(function(){
+	//cada elemento seleccionado
+	  $(this).attr("disabled",true);
+    });
+  function seleccionarCheck(){
+    var valores="";
+    $("input[type=checkbox]:checked").each(function(){
+	//cada elemento seleccionado
+	  //alert($(this).val());
+	    valores=valores+$(this).val()+",";
+    });
+    //return valores;
+   // alert(valores)
+    $("#idMenus").prop("href", "menuseleccionado?menusId="+valores)
+    //$("#idMenus").attr("href","menuseleccionado?menusId="valores);
+  }
+  
+  function habilitarCheck(objeto, tabla){
+   //alert("sssss")
+     $("input:checkbox").each(function(){
+	//cada elemento seleccionado
+	$(this).attr("checked",false);
+	  $(this).attr("disabled",true);
+	  
+    });
+    
+    //alert("sssss")
+    
+    $("#"+tabla+" input:checkbox").each(function(){
+	//cada elemento seleccionado
+	  $(this).attr("disabled",false);
+    });
+  }
+</script>

@@ -1,0 +1,14 @@
+<%= simple_form_for @contact, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%= error_span(@contact[:name]) %>
+  <%= f.input :celphone %>
+  <%= error_span(@contact[:celphone]) %>
+  <%= f.input :mail %>
+  <%= error_span(@contact[:mail]) %>
+  <%= f.input :message %>
+  <%= error_span(@contact[:message]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                contacts_path, :class => 'btn btn-default' %>
+<% end %>

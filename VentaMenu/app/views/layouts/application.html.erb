@@ -49,10 +49,15 @@
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
             <li><%= link_to "Nosotros", controller: "nosotros", action: "index"  %></li>
+            <li><%= link_to "Carta cliente",cus_local_index_path %></li>
             <li><%= link_to "Ciudades", cities_path %></li>
             <li><%= link_to "Locales", locals_path%></li>
             <li><%= link_to "Carta", menus_path  %></li>
             <li><%= link_to "Platos de la carta", menu_details_path  %></li>
+            <li><%= link_to "Tipo Menu", type_menus_path  %></li>
+            <li><%= link_to "Menu", foods_path  %></li>
+            <li><%= link_to "Tipo plato", type_foods_path  %></li>
+            <li><%= link_to "Contactenos", new_contact_path %></li>
           </ul>
         </div>
       </div>

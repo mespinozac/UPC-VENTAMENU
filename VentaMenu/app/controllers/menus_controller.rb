@@ -3,7 +3,13 @@ class MenusController < ApplicationController
   respond_to :html
 
   def index
+  @idlocal = params[:q]
+  if @q
+    @menus = Menu.where(:id => @idlocal)
+  else
     @menus = Menu.all
+   end
+    
     respond_with(@menus)
   end
 
@@ -20,7 +26,7 @@ class MenusController < ApplicationController
   end
 
   def create
-    @category = Menu.new(menu_params)
+    @menu = Menu.new(menu_params)
 
     respond_to do |format|
       if @menu.save

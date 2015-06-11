@@ -1,0 +1,16 @@
+<%= simple_form_for @customer, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%= error_span(@customer[:name]) %>
+  <%= f.input :lastname %>
+  <%= error_span(@customer[:lastname]) %>
+  <%= f.input :celphone %>
+  <%= error_span(@customer[:celphone]) %>
+  <%= f.input :mail %>
+  <%= error_span(@customer[:mail]) %>
+  <%= f.input :address %>
+  <%= error_span(@customer[:address]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                customers_path, :class => 'btn btn-default' %>
+<% end %>

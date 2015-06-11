@@ -10,7 +10,6 @@
       <th><%= model_class.human_attribute_name(:menu_id) %></th>
       <th><%= model_class.human_attribute_name(:food_id) %></th>
       <th><%= model_class.human_attribute_name(:typeFood_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -19,10 +18,9 @@
       <tr>
         <td><%= link_to menu_detail.id, menu_detail_path(menu_detail) %></td>
         <td><%= menu_detail.status %></td>
-        <td><%= menu_detail.menu_id %></td>
-        <td><%= menu_detail.food_id %></td>
-        <td><%= menu_detail.typeFood_id %></td>
-        <td><%=l menu_detail.created_at %></td>
+        <td><%= menu_detail.menu.name %></td>
+        <td><%= menu_detail.food.name %></td>
+        <td><%= menu_detail.type_menu.name %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_menu_detail_path(menu_detail), :class => 'btn btn-default btn-xs' %>

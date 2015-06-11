@@ -1,0 +1,11 @@
+<h3>Confirme su orden</h3>
+
+<% @menu_details.each do |menu_detail| %>
+<div>Menu solicitado el :<%= menu_detail.menu.dateMenu %></div>
+<div><%= menu_detail.food.type_food.name %> -  <%= menu_detail.food.name %></div>
+
+<% end %>
+
+<%= link_to "Ordenar",
+            new_customer_path,
+            :class => 'btn btn-primary' %>

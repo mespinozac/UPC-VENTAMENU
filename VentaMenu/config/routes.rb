@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
 
-
   get 'nosotros/index'
+  
+  resources :orders
+
+  resources :contacts
+
+  resources :customers
 
   get 'select_menu/index'
-
+  get 'cus_local/index'
+  get 'cus_local/localmenu'
+  get 'cus_local/menuseleccionado'
   resources :menu_details
 
   resources :menus
@@ -18,6 +25,8 @@ Rails.application.routes.draw do
   resources :locals
 
   resources :cities
+  
+  resources :contats
 
   devise_for :admins
   devise_for :users

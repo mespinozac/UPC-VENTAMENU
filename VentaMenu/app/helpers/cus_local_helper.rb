@@ -1,0 +1,2 @@
+module CusLocalHelper
+end

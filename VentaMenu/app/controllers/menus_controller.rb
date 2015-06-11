@@ -26,7 +26,7 @@ class MenusController < ApplicationController
   end
 
   def create
-    @category = Menu.new(menu_params)
+    @menu = Menu.new(menu_params)
 
     respond_to do |format|
       if @menu.save

@@ -42,6 +42,6 @@ class MenuDetailsController < ApplicationController
     end
 
     def menu_detail_params
-      params.require(:menu_detail).permit(:status, :menu_id, :food_id, :typeFood_id)
+      params.require(:menu_detail).permit(:status, :menu_id, :food_id, :type_menu_id)
     end
 end

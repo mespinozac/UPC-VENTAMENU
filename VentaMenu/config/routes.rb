@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
 
   get 'select_menu/index'
-
+  get 'cus_local/index'
+  get 'cus_local/localmenu'
   resources :menu_details
 
   resources :menus

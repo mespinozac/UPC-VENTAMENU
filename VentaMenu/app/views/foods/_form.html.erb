@@ -3,7 +3,7 @@
   <%= error_span(@food[:name]) %>
   <%= f.input :description %>
   <%= error_span(@food[:description]) %>
-  <%= f.association :typeFood %>
+  <%= f.association :type_food %>
   <%= error_span(@food[:typeFood_id]) %>
   <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

@@ -1,0 +1,32 @@
+<%- model_class = Local -%>
+<h1>Lista de menu</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:city_id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:address) %></th>
+      <th><%= model_class.human_attribute_name(:telephone) %></th>
+      <th><%= model_class.human_attribute_name(:celphone) %></th>
+      <th><%= model_class.human_attribute_name(:mail) %></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @locals.each do |local| %>
+      <tr>
+        <td><%= link_to local.id, local_path(local) %></td>
+        <td><%= local.city.name %></td>
+        <td><%= local.name %></td>
+        <td><%= local.address %></td>
+        <td><%= local.telephone %></td>
+        <td><%= local.celphone %></td>
+        <td><%= local.mail %></td>
+        <td><%= link_to "Ver",
+                      "localmenu?name="+local.id.to_s, :class => 'btn btn-default btn-xs' %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>

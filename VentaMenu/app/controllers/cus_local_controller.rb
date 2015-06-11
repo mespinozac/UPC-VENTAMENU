@@ -13,4 +13,12 @@ class CusLocalController < ApplicationController
     @type_foods = TypeFood.all
     #respond_with(@menus)
   end
+  
+  def menuseleccionado
+    valor = nil;
+    valor=params[:menusId].split(",")
+    @menu_details = MenuDetail.where(id: valor)
+    @type_foods = TypeFood.all
+    
+  end
 end

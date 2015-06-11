@@ -1,41 +1,12 @@
 <%- model_class = Menu -%>
-<h1>Local menu</h1>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:dateMenu) %></th>
-      <th><%= model_class.human_attribute_name(:status) %></th>
-      <th><%= model_class.human_attribute_name(:price) %></th>
-      <th><%= model_class.human_attribute_name(:local_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
-    </tr>
-  </thead>
-  <tbody>
+
+  
     <% @menus.each do |menu| %>
-      <tr>
-        <td><%= link_to menu.id, menu_path(menu) %></td>
-        <td><%= menu.name %></td>
-        <td><%= menu.dateMenu %></td>
-        <td><%= menu.status %></td>
-        <td><%= menu.price %></td>
-        <td><%= menu.local_id %></td>
-        <td><%=l menu.created_at %></td>
-        <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_menu_path(menu), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      menu_path(menu),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger' %>
-        </td>
-      </tr>
-      <tr>
-          <td colspan="8">
+    <div><h4>Local <%= menu.local.name %></h4></div>
+    <div><h4>fecha <%= menu.dateMenu %></h4></div>
+    <div><h4>carta <%= menu.name %></h4></div>
+    
             <table class="table table-striped">
               <thead>
                 <tr>
@@ -45,16 +16,17 @@
               <tbody>
                 <% @type_menus.each do |type_menu| %>
                   <tr>
-                    <td><h3>Tipo  de menu <%= type_menu.name %></h3></td>
+                    <td><h5><input type="radio" name="type_menu" onclick="habilitarCheck(this,'typeMenu<%= type_menu.id %>')">Tipo  de menu <%= type_menu.name %></label></h3></td>
                   </tr>
                   <tr>
                     <td>
-                      <table class="table table-striped">
+                      <table class="table table-striped" id="typeMenu<%= type_menu.id %>">
                         <thead>
                           <tr>
                             <th>Tipo Plato</th>
                             <th>Menu</th>
                             <th>Estado Menu</th>
+                            <th></th>
                           </tr>
                         </thead>
                         <tbody>
@@ -63,19 +35,53 @@
                               <td><%= menu_detail.food.type_food.name %></td>
                               <td><%= menu_detail.food.name %></td>
                               <td><%= menu_detail.status %></td>
+                              <td><input type="checkbox" onclick="seleccionarCheck();" value="<%= menu_detail.id%>" name="menu<%= menu_detail.id%>"></td>
                             </tr>
                           <% end %>
                         </tbody>
                       </table>
-                    </td>
-                    
-                  </tr>
                 <% end %>
-              </tbody>
-            </table>
-          </td>
-        
-      </tr>
+                </table>
     <% end %>
-  </tbody>
-</table>
+    <script>
+        
+      
+    </script>
+  
+    <a href="menuseleccionado?menusId" id="idMenus" class="btn btn-primary">seleccionar menu</a>
+    
+<script>
+    $("input:checkbox").each(function(){
+	//cada elemento seleccionado
+	  $(this).attr("disabled",true);
+    });
+  function seleccionarCheck(){
+    var valores="";
+    $("input[type=checkbox]:checked").each(function(){
+	//cada elemento seleccionado
+	  //alert($(this).val());
+	    valores=valores+$(this).val()+",";
+    });
+    //return valores;
+   // alert(valores)
+    $("#idMenus").prop("href", "menuseleccionado?menusId="+valores)
+    //$("#idMenus").attr("href","menuseleccionado?menusId="valores);
+  }
+  
+  function habilitarCheck(objeto, tabla){
+   //alert("sssss")
+     $("input:checkbox").each(function(){
+	//cada elemento seleccionado
+	$(this).attr("checked",false);
+	  $(this).attr("disabled",true);
+	  
+    });
+    
+    //alert("sssss")
+    
+    $("#"+tabla+" input:checkbox").each(function(){
+	//cada elemento seleccionado
+	  $(this).attr("disabled",false);
+    });
+  }
+</script>

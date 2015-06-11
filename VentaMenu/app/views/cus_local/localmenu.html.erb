@@ -63,6 +63,7 @@
                               <td><%= menu_detail.food.type_food.name %></td>
                               <td><%= menu_detail.food.name %></td>
                               <td><%= menu_detail.status %></td>
+                              <td><%= image_tag menu_detail.food.picture.url(:thumb) %></td>        
                             </tr>
                           <% end %>
                         </tbody>

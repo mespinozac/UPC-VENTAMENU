@@ -1,14 +1,16 @@
 <%= simple_form_for @local, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :nombre %>
-  <%= error_span(@local[:nombre]) %>
-  <%= f.input :direccion %>
-  <%= error_span(@local[:direccion]) %>
-  <%= f.input :telefono %>
-  <%= error_span(@local[:telefono]) %>
-  <%= f.input :celular %>
-  <%= error_span(@local[:celular]) %>
-  <%= f.input :ciudad_id %>
-  <%= error_span(@local[:ciudad_id]) %>
+  <%= f.input :name %>
+  <%= error_span(@local[:name]) %>
+  <%= f.input :address %>
+  <%= error_span(@local[:address]) %>
+  <%= f.input :telephone %>
+  <%= error_span(@local[:telephone]) %>
+  <%= f.input :celphone %>
+  <%= error_span(@local[:celphone]) %>
+  <%= f.input :mail %>
+  <%= error_span(@local[:mail]) %>
+  <%= f.association :city %>
+  <%= error_span(@local[:city_id]) %>
 
   <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

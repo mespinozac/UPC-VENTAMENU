@@ -1,0 +1,8 @@
+<%= simple_form_for @type_food, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%= error_span(@type_food[:name]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                type_foods_path, :class => 'btn btn-default' %>
+<% end %>

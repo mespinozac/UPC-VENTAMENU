@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150607201538) do
+ActiveRecord::Schema.define(version: 20150609073651) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -30,103 +30,68 @@ ActiveRecord::Schema.define(version: 20150607201538) do
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
-
-  create_table "cartacabs", force: true do |t|
-    t.text     "descripcion"
-    t.date     "fecha"
-    t.string   "estado"
-    t.float    "precio",      limit: 24
-    t.integer  "local_id"
-    t.integer  "tipomenu_id"
+  
+  create_table "cities", force: true do |t|
+    t.string   "name"
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "cartacabs", ["local_id"], name: "index_cartacabs_on_local_id", using: :btree
-  add_index "cartacabs", ["tipomenu_id"], name: "index_cartacabs_on_tipomenu_id", using: :btree
-
-  create_table "cartadetalles", force: true do |t|
-    t.string   "estado"
-    t.integer  "cartacab_id"
-    t.integer  "menu_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "cartadetalles", ["cartacab_id"], name: "index_cartadetalles_on_cartacab_id", using: :btree
-  add_index "cartadetalles", ["menu_id"], name: "index_cartadetalles_on_menu_id", using: :btree
-
-  create_table "ciudads", force: true do |t|
-    t.string   "nombre"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "clientes", force: true do |t|
-    t.string   "nombre"
-    t.string   "apellidos"
-    t.string   "celular"
-    t.string   "correo"
-    t.string   "empresa"
-    t.string   "direccionenvio"
+  create_table "foods", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "typeFood_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "locals", force: true do |t|
-    t.string   "nombre"
-    t.text     "direccion"
-    t.string   "telefono"
-    t.string   "celular"
-    t.integer  "ciudad_id"
+    t.string   "name"
+    t.string   "address"
+    t.string   "telephone"
+    t.string   "celphone"
+    t.string   "mail"
+    t.integer  "city_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "locals", ["ciudad_id"], name: "index_locals_on_ciudad_id", using: :btree
+  add_index "locals", ["city_id"], name: "index_locals_on_city_id", using: :btree
+
+  create_table "menu_details", force: true do |t|
+    t.string   "status"
+    t.integer  "menu_id"
+    t.integer  "food_id"
+    t.integer  "typeMenu_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "menu_details", ["food_id"], name: "index_menu_details_on_food_id", using: :btree
+  add_index "menu_details", ["menu_id"], name: "index_menu_details_on_menu_id", using: :btree
+  add_index "menu_details", ["typeMenu_id"], name: "index_menu_details_on_typeMenu_id", using: :btree
 
   create_table "menus", force: true do |t|
-    t.string   "nombre"
-    t.text     "descripcion"
-    t.integer  "tipoplato_id"
+    t.string   "name"
+    t.date     "dateMenu"
+    t.string   "status"
+    t.float    "price",      limit: 24
+    t.integer  "local_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "menus", ["tipoplato_id"], name: "index_menus_on_tipoplato_id", using: :btree
+  add_index "menus", ["local_id"], name: "index_menus_on_local_id", using: :btree
 
-  create_table "pedidodetalles", force: true do |t|
-    t.string   "estado"
-    t.integer  "pedido_id"
-    t.integer  "menu_id"
+  create_table "type_foods", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "pedidodetalles", ["menu_id"], name: "index_pedidodetalles_on_menu_id", using: :btree
-  add_index "pedidodetalles", ["pedido_id"], name: "index_pedidodetalles_on_pedido_id", using: :btree
-
-  create_table "pedidos", force: true do |t|
-    t.date     "fecha"
-    t.string   "horapedido"
-    t.string   "horaentrega"
-    t.string   "estado"
-    t.float    "montopedido", limit: 24
-    t.integer  "cartacab_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "pedidos", ["cartacab_id"], name: "index_pedidos_on_cartacab_id", using: :btree
-
-  create_table "tipomenus", force: true do |t|
-    t.string   "nombre"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "tipoplatos", force: true do |t|
-    t.string   "nombre"
+  create_table "type_menus", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

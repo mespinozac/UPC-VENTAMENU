@@ -1,17 +1,17 @@
 <%- model_class = Local -%>
 <div class="page-header">
-
-  <h1>Locales de comida</h1>
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:nombre) %></th>
-      <th><%= model_class.human_attribute_name(:direccion) %></th>
-      <th><%= model_class.human_attribute_name(:telefono) %></th>
-      <th><%= model_class.human_attribute_name(:celular) %></th>
-      <th><%= model_class.human_attribute_name(:ciudad_id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:address) %></th>
+      <th><%= model_class.human_attribute_name(:telephone) %></th>
+      <th><%= model_class.human_attribute_name(:celphone) %></th>
+      <th><%= model_class.human_attribute_name(:mail) %></th>
+      <th><%= model_class.human_attribute_name(:city_id) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -20,11 +20,12 @@
     <% @locals.each do |local| %>
       <tr>
         <td><%= link_to local.id, local_path(local) %></td>
-        <td><%= local.nombre %></td>
-        <td><%= local.direccion %></td>
-        <td><%= local.telefono %></td>
-        <td><%= local.celular %></td>
-        <td><%= local.ciudad_id %></td>
+        <td><%= local.name %></td>
+        <td><%= local.address %></td>
+        <td><%= local.telephone %></td>
+        <td><%= local.celphone %></td>
+        <td><%= local.mail %></td>
+        <td><%= local.city_id %></td>
         <td><%=l local.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
@@ -38,7 +39,7 @@
       </tr>
     <% end %>
   </tbody>
-</table>                      
+</table>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_local_path,

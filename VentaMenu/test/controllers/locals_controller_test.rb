@@ -18,7 +18,7 @@ class LocalsControllerTest < ActionController::TestCase
 
   test "should create local" do
     assert_difference('Local.count') do
-      post :create, local: { celular: @local.celular, ciudad_id: @local.ciudad_id, direccion: @local.direccion, nombre: @local.nombre, telefono: @local.telefono }
+      post :create, local: { address: @local.address, celphone: @local.celphone, city_id: @local.city_id, mail: @local.mail, name: @local.name, telephone: @local.telephone }
     end
 
     assert_redirected_to local_path(assigns(:local))
@@ -35,7 +35,7 @@ class LocalsControllerTest < ActionController::TestCase
   end
 
   test "should update local" do
-    patch :update, id: @local, local: { celular: @local.celular, ciudad_id: @local.ciudad_id, direccion: @local.direccion, nombre: @local.nombre, telefono: @local.telefono }
+    patch :update, id: @local, local: { address: @local.address, celphone: @local.celphone, city_id: @local.city_id, mail: @local.mail, name: @local.name, telephone: @local.telephone }
     assert_redirected_to local_path(assigns(:local))
   end
 

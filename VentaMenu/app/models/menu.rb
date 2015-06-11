@@ -1,4 +1,4 @@
 class Menu < ActiveRecord::Base
-  has_many :tipoplato
+  belongs_to :local
 end
 

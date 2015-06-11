@@ -1,11 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  nombre: MyString
-  descripcion: MyText
-  tipoplato_id: 
+  description: MyString
+  dateMenu: 2015-06-09
+  status: MyString
+  price: 
+  local_id: 
 
 two:
-  nombre: MyString
-  descripcion: MyText
-  tipoplato_id: 
+  description: MyString
+  dateMenu: 2015-06-09
+  status: MyString
+  price: 
+  local_id: 

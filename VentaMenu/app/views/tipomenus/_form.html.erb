@@ -1,11 +1,8 @@
-<%= simple_form_for(@tipomenu) do |f| %>
-  <%= f.error_notification %>
+<%= simple_form_for @tipomenu, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :nombre %>
+  <%= error_span(@tipomenu[:nombre]) %>
 
-  <div class="form-inputs">
-    <%= f.input :nombre %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                tipomenus_path, :class => 'btn btn-default' %>
 <% end %>

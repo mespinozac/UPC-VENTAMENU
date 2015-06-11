@@ -1,8 +1,11 @@
 <%- model_class = Tipoplato -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
-</div>
-<table class="table table-striped">
+ </div>
+ <% @menus.each do |menu| %>
+        <h2><%= menu.name%></h2>
+        <div class="container">
+          <table class="table table-striped">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
@@ -11,11 +14,14 @@
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
+ 
   <tbody>
-    <% @tipoplatos.each do |tipoplato| %>
+    <% menu.tipoplatos.each do |tipoplato| %>
+    
       <tr>
         <td><%= link_to tipoplato.id, tipoplato_path(tipoplato) %></td>
         <td><%= tipoplato.nombre %></td>
+         <td><%= tipoplato.menu.name %></td>
         <td><%=l tipoplato.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
@@ -27,10 +33,13 @@
                       :class => 'btn btn-xs btn-danger' %>
         </td>
       </tr>
-    <% end %>
-  </tbody>
+      
+       <% end %>
+   </tbody>
 </table>
-
+</div>
+ <% end %>
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_tipoplato_path,
             :class => 'btn btn-primary' %>
+

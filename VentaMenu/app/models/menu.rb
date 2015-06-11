@@ -1,3 +1,4 @@
 class Menu < ActiveRecord::Base
-  belongs_to :tipoplato
+  has_many :tipoplato
 end
+

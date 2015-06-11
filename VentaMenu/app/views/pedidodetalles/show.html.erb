@@ -1,19 +1,23 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Pedidodetalle -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Estado:</strong>
-  <%= @pedidodetalle.estado %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:estado) %>:</strong></dt>
+  <dd><%= @pedidodetalle.estado %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:pedido_id) %>:</strong></dt>
+  <dd><%= @pedidodetalle.pedido_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:menu_id) %>:</strong></dt>
+  <dd><%= @pedidodetalle.menu_id %></dd>
+</dl>
 
-<p>
-  <strong>Pedido:</strong>
-  <%= @pedidodetalle.pedido %>
-</p>
-
-<p>
-  <strong>Menu:</strong>
-  <%= @pedidodetalle.menu %>
-</p>
-
-<%= link_to 'Edit', edit_pedidodetalle_path(@pedidodetalle) %> |
-<%= link_to 'Back', pedidodetalles_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              pedidodetalles_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_pedidodetalle_path(@pedidodetalle), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              pedidodetalle_path(@pedidodetalle),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

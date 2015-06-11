@@ -1,35 +1,46 @@
-<h1>Listing pedidos</h1>
-
-<table>
+<%- model_class = Pedido -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Fecha</th>
-      <th>Horapedido</th>
-      <th>Horaentrega</th>
-      <th>Estado</th>
-      <th>Montopedido</th>
-      <th>Cartacab</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:fecha) %></th>
+      <th><%= model_class.human_attribute_name(:horapedido) %></th>
+      <th><%= model_class.human_attribute_name(:horaentrega) %></th>
+      <th><%= model_class.human_attribute_name(:estado) %></th>
+      <th><%= model_class.human_attribute_name(:montopedido) %></th>
+      <th><%= model_class.human_attribute_name(:cartacab_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @pedidos.each do |pedido| %>
       <tr>
+        <td><%= link_to pedido.id, pedido_path(pedido) %></td>
         <td><%= pedido.fecha %></td>
         <td><%= pedido.horapedido %></td>
         <td><%= pedido.horaentrega %></td>
         <td><%= pedido.estado %></td>
         <td><%= pedido.montopedido %></td>
-        <td><%= pedido.cartacab %></td>
-        <td><%= link_to 'Show', pedido %></td>
-        <td><%= link_to 'Edit', edit_pedido_path(pedido) %></td>
-        <td><%= link_to 'Destroy', pedido, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= pedido.cartacab_id %></td>
+        <td><%=l pedido.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_pedido_path(pedido), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      pedido_path(pedido),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Pedido', new_pedido_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_pedido_path,
+            :class => 'btn btn-primary' %>

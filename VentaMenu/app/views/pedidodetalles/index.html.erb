@@ -1,29 +1,40 @@
-<h1>Listing pedidodetalles</h1>
-
-<table>
+<%- model_class = Pedidodetalle -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Estado</th>
-      <th>Pedido</th>
-      <th>Menu</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:estado) %></th>
+      <th><%= model_class.human_attribute_name(:pedido_id) %></th>
+      <th><%= model_class.human_attribute_name(:menu_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @pedidodetalles.each do |pedidodetalle| %>
       <tr>
+        <td><%= link_to pedidodetalle.id, pedidodetalle_path(pedidodetalle) %></td>
         <td><%= pedidodetalle.estado %></td>
-        <td><%= pedidodetalle.pedido %></td>
-        <td><%= pedidodetalle.menu %></td>
-        <td><%= link_to 'Show', pedidodetalle %></td>
-        <td><%= link_to 'Edit', edit_pedidodetalle_path(pedidodetalle) %></td>
-        <td><%= link_to 'Destroy', pedidodetalle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= pedidodetalle.pedido_id %></td>
+        <td><%= pedidodetalle.menu_id %></td>
+        <td><%=l pedidodetalle.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_pedidodetalle_path(pedidodetalle), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      pedidodetalle_path(pedidodetalle),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Pedidodetalle', new_pedidodetalle_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_pedidodetalle_path,
+            :class => 'btn btn-primary' %>
